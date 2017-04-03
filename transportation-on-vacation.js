@@ -1,6 +1,12 @@
 function rentalCarCost(d) {
-  var day = d >= 3 && d < 7 ? 20 : 0,
-      week = d >= 7 ? 50 : 0;
-  
-  return (d * 40) - day - week;
+var cost = d * 40, 
+      discount;
+  if (d >= 7) {
+    discount = 50;
+  } else if (d >= 3) {
+    discount = 20;
+  } else {
+    discount = 0
+  }
+  return cost - discount;
 }
